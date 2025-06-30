@@ -18,9 +18,7 @@ jobs:
     - name: Install dependencies
       run: uv sync
     - name: Run tests and collect coverage
-      run: uv run pytest --cov=api.calculator --cov-report=xml
-    - name: Run tests and collect coverage for smiles
-      run: uv run pytest --cov=api.smiles --cov-report=xml:smiles-coverage.xml
+      run: uv run pytest --cov
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@v5
       env:
